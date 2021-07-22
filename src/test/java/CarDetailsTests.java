@@ -91,7 +91,26 @@ public class CarDetailsTests {
     }
 
     @Test
-    public void convertToElectric_Returns(){
+    public void convertToElectric_ReturnsTrue(){
 
+        //Arrange
+        Car car = new Car();
+        //Act
+
+        CarUtils.convertToElectric(car, "Electric");
+        //Assert
+        Assert.assertTrue(car.isElectric());
+    }
+
+    @Test
+    public void convertToElectric_ReturnsFalse(){
+
+        //Arrange
+        Car car = new Car();
+        //Act
+
+        CarUtils.convertToElectric(car, "gas");
+        //Assert
+        Assert.assertFalse(car.isElectric());
     }
 }

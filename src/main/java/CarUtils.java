@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class CarUtils {
 
     public static String getCarDetails(Car car){
@@ -29,8 +31,10 @@ public class CarUtils {
 
     }
 
-    public static void  convertToElectric(Car car, boolean isElectric){
-
+    public static void  convertToElectric(Car car, String engineType){
+        if(engineType.toLowerCase().contains("electric")){
+            car.setElectric(true);
+        }
         boolean electric = car.isElectric();
         car.setElectric(electric);
     }
